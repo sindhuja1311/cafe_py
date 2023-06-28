@@ -38,8 +38,8 @@ def dashie():
         return render_template('dashboard.html',data=[i for i in data1])  
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'gudlasindhuja.20.cse@anits.edu.in'
-app.config['MAIL_PASSWORD'] = 'kwonyul400003'
+app.config['MAIL_USERNAME'] = '--EMAILID--'
+app.config['MAIL_PASSWORD'] = '--PASSWORD--'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -65,7 +65,7 @@ def confirm():
         filter = { "ticket":tik }
         newvalues = { "$set": { 'status': "confirmed" } }
         collection.update_one(filter, newvalues)
-        msg = Message("booking confirmed", sender='gudlasindhuja.20.cse@anits.edu.in', recipients=[eid])
+        msg = Message("booking confirmed", sender='--EMAILID--', recipients=[eid])
         msg.body = "Thank you for booking! Your reservation  is confirmed!"
         mail.send(msg)
     return redirect(url_for("dashie"))
@@ -76,7 +76,7 @@ def cancel():
         tik=request.form.get("tik")
         data=collection.find_one({"ticket":tik})
         eid=data["email"]
-        msg = Message("booking cancelled", sender='gudlasindhuja.20.cse@anits.edu.in', recipients=[eid])
+        msg = Message("booking cancelled", sender='--EMAILID--', recipients=[eid])
         msg.body ="Sorry we had to cancel your reservastion due to excessive booking, Thank you for choosing us!"
         mail.send(msg)
         collection.delete_many({'ticket':tik})
