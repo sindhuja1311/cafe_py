@@ -1,0 +1,50 @@
+body{
+    font-family:  sans-serif;
+    color:white;
+    background-color: beige;
+    background-image: url('https://media2.giphy.com/media/26BRyql7J3iOx875u/giphy.gif?cid=ecf05e472790y2kgyp2228lf8htmrrrutxtw2dgfpq25tuhj&ep=v1_stickers_search&rid=giphy.gif&ct=s');
+}
+  #message-card {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left:50%;
+    opacity: 0.8;
+  }
+  #message-card{
+    width: 300px;
+    height:500px;
+    margin-top:50px;
+    border-radius: 20px;
+    padding: 50px;   
+  }
+  
+  p{
+    font-size: 20px;
+  }
+  input{
+    border-radius:4px;
+    width:300px;
+    height:40px;
+    margin-bottom: 10px;
+  
+  }
+  input[type="submit"],button{
+    height:50px;
+    width:100px;
+    border-radius: 10px;
+    color:black;
+  }
+  
+  input[type="submit"]:hover,button:hover{
+    background-color: #a18b85;
+    color: gold;
+  }
+  
+  ::placeholder{
+    text-align: center;
+    font-size: 15px;
+  }
+ 
