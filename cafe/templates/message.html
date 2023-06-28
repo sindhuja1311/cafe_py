@@ -1,0 +1,56 @@
+<html>
+                <head>
+                    <link rel="stylesheet" href="static/style1.css">
+                    <link rel="stylesheet" href="static/cafi1.css">
+                    <title>Thank you!</title>
+                </head>
+                <body >
+                    <!--coffee animation-->
+                    <div id="coffeey">
+                        <div class="container">
+                            <div class="upper">
+                                <div class="timer"></div>
+                                <div class="upper-btn"></div>
+                            </div>
+                            <div class="filter">
+                                <div class="filter-base"></div>
+                                <div class="handle"></div>
+                                <div class="coffee"></div>
+                                <div class="steam"></div>
+                                <div class="coffee-drop"></div>
+                            </div>
+                            <div class="back">
+                                <div class="tray"></div>
+                                <div class="cup"></div>
+                            </div>
+                            <div class="lower">
+                                <div class="lower-btn"></div>
+                            </div>
+                        </div></div>
+                        <!--end-->
+                        <!--message-->
+                    {% for i in data %}
+                    <br><br>
+                <div id="message-card" style="background-color:#4B3832; ">
+                <h1 style="text-align:center;color:white;">Coffee Cafe`</h1>
+                <hr><br>
+                    <form method="post" action="/cancy" align="center">
+                    <h2 style="text-align:center;">Thank you for choosing us {{i.cus_name}} ! <br><br>Your ticket is : {{i.ticket}}</h2>
+                    <p><u>Want to cancel your booking?<u></p>
+                    <input type="text" placeholder="Ticket ID" name="ticket">
+                    <input type="submit" placeholder="cancel" name="cancel" value="CANCEL" onclick=cancelled()>
+                    </form>
+                    <br><br>
+                    <button value="goback" onclick=gogo() class="gogo">GO BACK</button>
+                    <script>
+                    function cancelled(){
+                    alert("cancelled");}
+                    function gogo(){
+                        window.location.href = "/returnie";
+                    }
+                    </script>
+                    {% endfor %}
+            </div>
+            <!--end-->
+                        </body>
+                        </html>

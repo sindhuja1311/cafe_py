@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee cafe`</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/cani.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
+  <nav>
+    <img src="static/ion.jpg" alt="icon" onclick=admin() style="margin-right:800px;height:70px;width:70px; transform:translate(-50%,-12%);">
+    <a href="#homie">Home</a>
+    <a href="#order">Menu</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <script>
+    function admin(){
+      window.location.replace('/addmin');
+    }
+  </script>
+  <div id="homie">
+  <div class="slideshow">
+    <img src="static/hero_1.jpg" alt="Image 1">
+    <img src="static/hero_2.jpg" alt="Image 2">
+    <img src="static/hero_3.jpg" alt="Image 3">
+  </div>
+
+  
+  <script>
+   var images = document.querySelectorAll('.slideshow img');
+   var currentImageIndex = 0;
+
+   function showImage(index) {
+     for (var i = 0; i < images.length; i++) {
+       images[i].style.opacity = '0';
+     }
+
+     images[index].style.opacity = '1';
+   }
+
+   function nextImage() {
+     currentImageIndex++;
+     if (currentImageIndex === images.length) {
+       currentImageIndex = 0;
+     }
+     showImage(currentImageIndex);
+   }
+
+   setInterval(nextImage, 3000);
+ </script>
+
+
+      <div class="content">
+         <h1>Coffee Heaven</h1>
+         <p>Get your taste of coffee with hint of of desserts we got here for you!</p>
+      </div>
+</div>
+<br><br><br>
+<!--end of home-->
+
+<!--Order-->
+
+<div id="order">
+  <div id="coffee-express" class="coffee-express">
+    <div class="express">
+      <div class="base">
+        <div class="buttons"></div>
+      </div>
+      <div class="panel">
+        <div class="button"></div>
+        <div class="logo"></div>
+      </div>
+      <div class="coffeepod"></div>
+      <div class="drinks"></div>
+      <div class="cup"></div>
+      <div id="wrap">
+    <div id="steam" class="steam1"></div>
+    <div id="steam" class="steam2"></div>
+    <div id="steam" class="steam3"></div>
+    <div id="steam" class="steam4"></div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script>
+        $(document).ready(function(){
+        $('#coffee-express').mouseleave(function(){
+          $(this).removeClass('clicked');
+        }).click(function(){
+          $(this).addClass('clicked').html($(this).html());
+        });
+      });
+  </script>
+  <div class="beanb">
+    <img src="static/b2.jpg" alt="bean">
+      <h2 class="beanbt">Check out our menu! </h2>
+  </div>
+<!--END OF ORDER-->
+<div id="menu">
+<!--MENUUU-->
+    <table>
+      <tr>
+        <td>
+    <div class="card">
+      <img src="static/coffee_latte.jpg" alt="Avatar" >
+      <div class="container">
+        <h4><b>Coffee Latte</b></h4>
+        <p>Get a taste of our cafe` speciality coffee latte and pair it up with any dessert available</p>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="card">
+      <img src="static/coffee_latte.jpg" alt="Avatar" >
+      <div class="container">
+        <h4><b>Coffee Latte</b></h4>
+        <p>Get a taste of our cafe` speciality coffee latte and pair it up with any dessert available</p>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="card">
+      <img src="static/coffee_latte.jpg" alt="Avatar" >
+      <div class="container">
+        <h4><b>Coffee Latte</b></h4>
+        <p>Get a taste of our cafe` speciality coffee latte and pair it up with any dessert available</p>
+      </div>
+    </div>
+  </td>
+  </tr>
+  <tr>
+    <td>
+<div class="card">
+  <img src="static/coffee_latte.jpg" alt="Avatar" >
+  <div class="container">
+    <h4><b>Coffee Latte</b></h4>
+    <p>Get a taste of our cafe` speciality coffee latte and pair it up with any dessert available</p>
+  </div>
+</div>
+</td>
+<td>
+<div class="card">
+  <img src="static/coffee_latte.jpg" alt="Avatar" >
+  <div class="container">
+    <h4><b>Coffee Latte</b></h4>
+    <p>Get a taste of our cafe` speciality coffee latte and pair it up with any dessert available</p>
+  </div>
+</div>
+</td>
+<td>
+<div class="card">
+  <img src="static/coffee_latte.jpg" alt="Avatar" >
+  <div class="container">
+    <h4><b>Coffee Latte</b></h4>
+    <p>Get a taste of our cafe` speciality coffee latte and pair it up with any dessert available</p>
+  </div>
+</div>
+</td>
+</tr>
+  </table>
+   </div>
+<!--end of menu-->
+
+<!--booking-->
+    <div id="booking" style="background-color:#4B3832;">
+        <img src="static/coffee_back.png" alt="">
+        <div class="reg-form" style="background-color:#4B3832;" align="center">
+          <h1 style="text-align:center;color:white;font-family:cursive;">Reservation</h1>
+          <hr><br><br>
+            <form  method="post" action="/messy">
+                <label for="cus-name">Reserve under</label><br>
+                <input type="text" placeholder="Name" name="cus_name" required>
+                <br><br>
+                <label for="cus-email">Email ID</label><br>
+                <input type="email" placeholder="Email ID" name="cus_email" required> 
+                <br><br>
+                <label for="cus-seats">Seats to book</label><br>
+                <input type="number" placeholder="Seats count" name="cus_seats" required>
+                <br><br>
+                <input type="datetime-local" placeholder="datetime" name="time"><br><br>
+                <label for="cus-contact">Contact Number</label><br>
+                <input type="number" placeholder="Phone number" name="pho_num" required>
+                <br><br><br>
+                <input type="submit" placeholder="BOOK" name="book" value="book">
+                
+            </form>
+        </div>
+    </div>
+<!--end of booking-->
+
+<!--contact-footer-section-->
+<div id="contact">
+  <h1>For more</h1>
+    <a class=" contact-link" href ="#">Instagram</a>
+    <a class="contact-link" href="#">Facebook</a>
+    <a class="contact-link" href="#">Twitter</a>
+    <a class="contact-link" href="#">Snapchat</a>
+</div>
+</body>
+</html>

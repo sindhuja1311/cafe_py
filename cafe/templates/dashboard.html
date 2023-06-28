@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="static/dashing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <img src="static/ion.jpg" alt="icon" onclick=home() style="margin-right:800px;height:70px;width:70px; transform:translate(-400px,-12%);">
+        <h1>BOOKINGS</h1>
+        <script>
+            function home(){
+                window.location.replace('/addmin');
+            }
+        </script>
+    </div>
+    <br><br><br>
+    <table align="center"  id="display">
+        <tr>
+        <th>Booking ID </th>
+        <th>Customer name</th>
+        <th>Email</th>
+        <th>Seats</th>
+        <th>Time</th>
+        <th>Phone number</th>
+        <th>YES BOOKING</th>
+        <th>NO BOOKING</th>
+        <th>Status</th>
+        </tr>
+        {% for i in data %} 
+        <tr id="trtr">
+        <td>{{ i.ticket}}</td>
+        <td>{{ i.cus_name }}</td>
+        <td>{{i.email}}</td>
+        <td>{{ i.cus_seats }}</td>
+        <td>{{ i.time }}</td>
+        <td>{{ i.pho_num }}</td>
+        <td>
+        <form method="post" action="/coemail">
+        <input type="text" name="tik" placeholder="B-ID">
+        <button value="yes" name="action" id="button1">Y</button></form></td>
+        <td>
+        <form method="post" action="/caemail">
+        <input type="text" name="tik" placeholder="B-ID">
+        <button value="no" name="action"  id="button2">N</button>
+        </form></td>
+        <td>{{i.status}}</td>
+        </tr>
+        {% endfor %}
+       </table>
+</body>
+</html>
