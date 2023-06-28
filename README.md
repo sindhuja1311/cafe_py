@@ -4,3 +4,4 @@
 <h4>Front-end:</h4><p><i>HTML,CSS,JS</i></p>
 <h4>Back-end:</h4><p><i>Python-Flask</i></p>
 <h4>Database:</h4><p><i>MongoDB</i></p>
+<h5>PS: this webpage is not completely responsive, supports navbar option only!</h5>
